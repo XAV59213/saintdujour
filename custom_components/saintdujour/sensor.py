@@ -49,3 +49,7 @@ class SaintDuJourSensor(SensorEntity):
     @property
     def extra_state_attributes(self):
         return self._attributes
+
+    @property
+    def extra_state_attributes(self):
+        return self._attributes
