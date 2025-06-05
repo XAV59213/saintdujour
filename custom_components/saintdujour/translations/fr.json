@@ -13,7 +13,15 @@
   "entity": {
     "sensor": {
       "saint_du_jour": {
-        "name": "Saint du Jour"
+        "name": "Saint du Jour",
+        "state_attributes": {
+          "saint_name": {
+            "name": "Nom du saint"
+          },
+          "feast_day": {
+            "name": "Jour de fête"
+          }
+        }
       }
     }
   }
