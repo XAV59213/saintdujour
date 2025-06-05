@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Saints du Jour",
+        "description": "Configurer le capteur pour les saints du jour."
+      }
+    },
+    "abort": {
+      "single_instance_only": "Une seule instance est autorisée."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "saint_du_jour": {
+        "name": "Saint du Jour"
+      }
+    }
+  }
+}
