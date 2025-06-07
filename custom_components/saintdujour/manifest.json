@@ -7,6 +7,6 @@
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/xav59213/xav59213-saints-du-jour/issues",
   "requirements": [],
-  "version": "1.0.0",
+  "version": "1.0.8",
   "config_flow": true
 }
