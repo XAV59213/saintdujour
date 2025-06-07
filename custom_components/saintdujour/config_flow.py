@@ -2,8 +2,6 @@
 import logging 
 import voluptuous as vol 
 from homeassistant import config_entries
-from homeassistant.core import callback
-from homeassistant.config_entries import SuggestedLovelaceCard
 from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
@@ -29,18 +27,3 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             },
             errors={}
         )
-
-    @staticmethod
-    @callback
-    def async_get_suggested_lovelace_cards() -> list[SuggestedLovelaceCard]:
-        """Retourne la carte Lovelace suggérée."""
-        return [
-            SuggestedLovelaceCard(
-                card_type="entity",
-                card_config={
-                    "type": "entity",
-                    "entity": "sensor.saint_du_jour",
-                    "name": "Saint du Jour"
-                }
-            )
-        ]
