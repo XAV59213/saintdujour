@@ -35,7 +35,7 @@ Ajoutez ce code à votre tableau de bord pour afficher le capteur :
 type: entity
 entity: sensor.saint_du_jour
 name: Saint du Jour
-
+```
 🔍 Détails du capteur
 Attribut	Description
 state	Nom du saint célébré
