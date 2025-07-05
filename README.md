@@ -20,7 +20,7 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 2. Cliquez sur les trois points en haut à droite > *Dépôt personnalisé*.
 3. Ajoutez ce dépôt GitHub :  
 
-https://github.com/xav59213/xav59213-saints-du-jour
+[[https://github.com/xav59213/xav59213-saints-du-jour](https://github.com/XAV59213/saintdujour/)](https://github.com/XAV59213/saintdujour.git)
 
 en tant que type `Intégration`.
 4. Installez **Saints du Jour** depuis la liste HACS.
