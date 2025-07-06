@@ -2,7 +2,7 @@
   "config": {
     "step": {
       "user": {
-        "title": "Saints du Jour",
+        "title": "Les Saints du Jour",
         "description": "Configurer le capteur pour les saints du jour."
       }
     },
@@ -13,7 +13,7 @@
   "entity": {
     "sensor": {
       "saint_du_jour": {
-        "name": "Saint du Jour",
+        "name": "Les Saint du Jour",
         "state_attributes": {
           "saint_name": {
             "name": "Nom du saint"
