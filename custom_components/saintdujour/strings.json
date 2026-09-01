@@ -1,0 +1,24 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Saints du Jour",
+        "description": "This creates the Saint of the day and Saint of tomorrow sensors. No options to configure."
+      }
+    },
+    "abort": {
+      "single_instance_only": "Already configured. Only a single instance is allowed.",
+      "already_configured": "Already configured. Only a single instance is allowed."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "saint_du_jour": {
+        "name": "Saint du Jour"
+      },
+      "saint_de_demain": {
+        "name": "Saint de Demain"
+      }
+    }
+  }
+}

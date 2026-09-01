@@ -2,12 +2,13 @@
   "config": {
     "step": {
       "user": {
-        "title": "Les Saints du Jour",
-        "description": "Configurer les capteurs pour les saints du jour et de demain."
+        "title": "Saints du Jour",
+        "description": "Ajoute les capteurs Saint du Jour et Saint de Demain. Aucune option à renseigner."
       }
     },
     "abort": {
-      "single_instance_only": "Une seule instance est autorisée."
+      "single_instance_only": "Une seule instance est autorisée.",
+      "already_configured": "Déjà configuré. Une seule instance est autorisée."
     }
   },
   "entity": {
@@ -15,29 +16,17 @@
       "saint_du_jour": {
         "name": "Saint du Jour",
         "state_attributes": {
-          "saint_name": {
-            "name": "Nom du saint"
-          },
-          "feast_day": {
-            "name": "Jour de fête"
-          },
-          "offset_days": {
-            "name": "Décalage (jours)"
-          }
+          "saint_name": { "name": "Nom du saint" },
+          "feast_day": { "name": "Jour de fête" },
+          "offset_days": { "name": "Décalage (jours)" }
         }
       },
       "saint_de_demain": {
         "name": "Saint de Demain",
         "state_attributes": {
-          "saint_name": {
-            "name": "Nom du saint"
-          },
-          "feast_day": {
-            "name": "Jour de fête"
-          },
-          "offset_days": {
-            "name": "Décalage (jours)"
-          }
+          "saint_name": { "name": "Nom du saint" },
+          "feast_day": { "name": "Jour de fête" },
+          "offset_days": { "name": "Décalage (jours)" }
         }
       }
     }
