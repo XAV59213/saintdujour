@@ -33,6 +33,8 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 5. **Ensuite seulement**, redémarrez Home Assistant.
 6. Allez dans **Paramètres → Appareils & services → Ajouter une intégration** et ajoutez **Saints du Jour**.
 
+⚠️ HACS installe seulement les fichiers. Les capteurs `sensor.saint_du_jour` et `sensor.saint_de_demain` n’apparaissent **qu’après** l’étape 6. L’entité `update.saints_du_jour` vient de HACS (mise à jour du composant), ce n’est pas le capteur du saint.
+
 > **Le dépôt disparaît après un redémarrage ?**  
 > HACS retire les dépôts personnalisés qui n’ont pas encore été téléchargés. Ajoutez le dépôt, téléchargez l’intégration, *puis* redémarrez.
 
@@ -68,6 +70,18 @@ entities:
 | `saint_name` | Nom du saint (identique) |
 | `feast_day` | Date au format DD:MM |
 | `offset_days` | `0` aujourd’hui, `1` demain |
+
+## 🐞 Dépannage
+
+### Je ne vois que `update.saints_du_jour`
+
+C’est normal après HACS. Cette entité sert à mettre à jour le module. Pour créer les capteurs :
+
+1. Redémarrer Home Assistant si ce n’est pas déjà fait.
+2. **Paramètres → Appareils & services → Ajouter une intégration**.
+3. Chercher **Saints du Jour** (ou **Saint du Jour**) et valider.
+
+Les capteurs apparaissent alors sous l’appareil **Saints du Jour**.
 
 ## 🚀 Développement
 
