@@ -3,8 +3,12 @@ DOMAIN = "saintdujour"
 SENSOR_NAME = "Saint du Jour"
 SENSOR_UNIQUE_ID = f"{DOMAIN}_sensor"
 
+TOMORROW_SENSOR_NAME = "Saint de Demain"
+TOMORROW_SENSOR_UNIQUE_ID = f"{DOMAIN}_sensor_tomorrow"
+
 ATTR_SAINT_NAME = "saint_name"
 ATTR_FEAST_DAY = "feast_day"
+ATTR_OFFSET_DAYS = "offset_days"
 
 SAINTS_OF_THE_DAY = {
     "01:01": "les Ugolin",
