@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Saints du Jour">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3a7a"/>
+      <stop offset="100%" stop-color="#0b1f52"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bg)"/>
+  <circle cx="256" cy="242" r="168" fill="none" stroke="#d4af37" stroke-width="12"/>
+  <circle cx="72" cy="72" r="8" fill="#d4af37"/>
+  <circle cx="440" cy="72" r="8" fill="#d4af37"/>
+  <circle cx="72" cy="440" r="8" fill="#d4af37"/>
+  <circle cx="440" cy="440" r="8" fill="#d4af37"/>
+  <path fill="#ffffff" d="M168 262c18-28 48-58 86-66 22-4 40 2 58 12 8-22 28-40 52-48-28 18-38 42-36 64 22 10 40 26 48 36-22-2-46 4-66 16-8 22-26 38-52 44-28 6-56-2-76-16-16 8-36 10-54 4 16-8 28-22 40-46z"/>
+  <path fill="#d4af37" d="M348 230l28 8-28 10z"/>
+  <circle cx="300" cy="228" r="7" fill="#0b1f52"/>
+  <rect x="268" y="286" width="112" height="122" rx="16" fill="#fff"/>
+  <path fill="#b02a34" d="M268 286h112v38H268z"/>
+  <rect x="268" y="308" width="112" height="16" fill="#b02a34"/>
+  <circle cx="296" cy="286" r="8" fill="none" stroke="#d4af37" stroke-width="5"/>
+  <circle cx="352" cy="286" r="8" fill="none" stroke="#d4af37" stroke-width="5"/>
+  <text x="324" y="388" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="72" font-weight="700" fill="#d4af37">7</text>
+</svg>
