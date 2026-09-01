@@ -13,7 +13,8 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 ## 📦 Fonctionnalités
 
 - Affiche automatiquement le saint du jour (par exemple : « les Pierre et Paul » pour le 29 juin).
-- Mise à jour quotidienne du capteur.
+- Affiche aussi le saint de demain (`sensor.saint_de_demain`), utile si l’on célèbre la veille.
+- Mise à jour quotidienne des capteurs.
 - Intégration native via l’interface graphique Home Assistant.
 - Compatible avec une carte Lovelace type `entity`.
 
@@ -38,18 +39,27 @@ Aucune configuration manuelle n’est nécessaire. Une fois installée, ajoutez 
 ## 🧾 Exemple de carte Lovelace
 
 ```yaml
-type: entity
-entity: sensor.saint_du_jour
-name: Saint du Jour
+type: entities
+entities:
+  - entity: sensor.saint_du_jour
+    name: Saint du Jour
+  - entity: sensor.saint_de_demain
+    name: Saint de Demain
 ```
 
-### Détails du capteur
+### Détails des capteurs
+
+| Entité | Description |
+| --- | --- |
+| `sensor.saint_du_jour` | Saint célébré aujourd’hui |
+| `sensor.saint_de_demain` | Saint célébré demain |
 
 | Attribut | Description |
 | --- | --- |
 | `state` | Nom du saint célébré |
 | `saint_name` | Nom du saint (identique) |
-| `feast_day` | Date du jour au format DD:MM |
+| `feast_day` | Date au format DD:MM |
+| `offset_days` | `0` aujourd’hui, `1` demain |
 
 ## 🚀 Développement
 
