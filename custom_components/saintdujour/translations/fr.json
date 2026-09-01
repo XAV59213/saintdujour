@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Les Saints du Jour",
-        "description": "Configurer le capteur pour les saints du jour."
+        "description": "Configurer les capteurs pour les saints du jour et de demain."
       }
     },
     "abort": {
@@ -13,13 +13,30 @@
   "entity": {
     "sensor": {
       "saint_du_jour": {
-        "name": "Les Saint du Jour",
+        "name": "Saint du Jour",
         "state_attributes": {
           "saint_name": {
             "name": "Nom du saint"
           },
           "feast_day": {
             "name": "Jour de fête"
+          },
+          "offset_days": {
+            "name": "Décalage (jours)"
+          }
+        }
+      },
+      "saint_de_demain": {
+        "name": "Saint de Demain",
+        "state_attributes": {
+          "saint_name": {
+            "name": "Nom du saint"
+          },
+          "feast_day": {
+            "name": "Jour de fête"
+          },
+          "offset_days": {
+            "name": "Décalage (jours)"
           }
         }
       }
