@@ -1,7 +1,7 @@
 # 🪿 Saints du Jour
 
 <p align="center">
-  <img src="custom_components/saintdujour/brand/icon.png" alt="Saints du Jour" width="128" height="128">
+  <img src="custom_components/saintdujour/brand/icon.svg" alt="Saints du Jour" width="128" height="128">
 </p>
 
 <p align="center"><b>Saints du Jour</b> — calendrier liturgique français pour Home Assistant</p>
@@ -57,11 +57,11 @@ name: Saint du Jour
 - Fichier principal : `sensor.py`
 - Flux de configuration intégré (`config_flow`)
 - Aucune dépendance externe requise
-- Images de marque locales (Home Assistant 2026.3+ / HACS) :
-  - `custom_components/saintdujour/brand/icon.png` (256×256)
-  - `custom_components/saintdujour/brand/icon@2x.png` (512×512)
-  - `custom_components/saintdujour/brand/logo.png`
-  - `custom_components/saintdujour/brand/logo@2x.png`
+- Images de marque locales (Home Assistant 2026.3+ / HACS) dans `custom_components/saintdujour/brand/` :
+  - `icon.png` — 256×256
+  - `icon@2x.png` — 512×512
+  - `logo.png` / `logo@2x.png`
+  - `icon.svg` — source vectorielle
 
 ## ❗ Problèmes / suggestions
 
