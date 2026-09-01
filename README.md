@@ -8,6 +8,8 @@
 
 Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io), permettant d’afficher chaque jour le ou les saints célébrés selon le calendrier liturgique français.
 
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=XAV59213&repository=saintdujour&category=integration)
+
 <a href="https://www.buymeacoffee.com/xav59213"><img src="https://img.buymeacoffee.com/button-api/?text=xav59213&emoji=&slug=xav59213&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
 ## 📦 Fonctionnalités
@@ -22,19 +24,25 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 
 ### Via HACS (recommandé)
 
-1. Ouvrez **HACS > Intégrations**.
-2. Cliquez sur les trois points en haut à droite > *Dépôt personnalisé*.
-3. Ajoutez ce dépôt GitHub :
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=XAV59213&repository=saintdujour&category=integration)
 
-   `https://github.com/XAV59213/saintdujour`
+1. Ouvrez **HACS**.
+2. Menu ⋮ → **Dépôts personnalisés**.
+3. Ajoutez `https://github.com/XAV59213/saintdujour` en type **Intégration**.
+4. Cherchez **Saints du Jour** dans HACS et cliquez **Télécharger**.
+5. **Ensuite seulement**, redémarrez Home Assistant.
+6. Allez dans **Paramètres → Appareils & services → Ajouter une intégration** et ajoutez **Saints du Jour**.
 
-   en tant que type **Intégration**.
-4. Installez **Saints du Jour** depuis la liste HACS.
-5. Redémarrez Home Assistant.
+> **Le dépôt disparaît après un redémarrage ?**  
+> HACS retire les dépôts personnalisés qui n’ont pas encore été téléchargés. Ajoutez le dépôt, téléchargez l’intégration, *puis* redémarrez.
+
+### Installation manuelle
+
+Copiez `custom_components/saintdujour/` dans `/config/custom_components/`, redémarrez, puis ajoutez l’intégration depuis l’interface.
 
 ## ⚙️ Configuration
 
-Aucune configuration manuelle n’est nécessaire. Une fois installée, ajoutez l’intégration via **Paramètres > Appareils & services > Ajouter une intégration** et recherchez **Saints du Jour**.
+Aucune configuration manuelle n’est nécessaire une fois l’intégration ajoutée.
 
 ## 🧾 Exemple de carte Lovelace
 
