@@ -2,5 +2,9 @@
   "name": "Saints du Jour",
   "homeassistant": "2024.6.0",
   "render_readme": true,
-  "country": ["FR"]
+  "country": [
+    "FR"
+  ],
+  "zip_release": true,
+  "filename": "saintdujour.zip"
 }
