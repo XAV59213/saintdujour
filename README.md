@@ -1,5 +1,7 @@
 # 🪿 Saints du Jour
 
+[![Downloads](https://img.shields.io/github/downloads/XAV59213/saintdujour/total.svg?label=Downloads)](https://github.com/XAV59213/saintdujour/releases)
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/XAV59213/saintdujour/main/custom_components/saintdujour/brand/icon.svg" alt="Saints du Jour" width="128" height="128">
 </p>
