@@ -1,7 +1,7 @@
 # 🪿 Saints du Jour
 
 <p align="center">
-  <img src="custom_components/saintdujour/brand/icon.svg" alt="Saints du Jour" width="128" height="128">
+  <img src="https://raw.githubusercontent.com/XAV59213/saintdujour/main/custom_components/saintdujour/brand/icon.svg" alt="Saints du Jour" width="128" height="128">
 </p>
 
 <p align="center"><b>Saints du Jour</b> — calendrier liturgique français pour Home Assistant</p>
