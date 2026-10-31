@@ -2,8 +2,9 @@
 (() => {
   const DEFAULTS = {
     title: "🙏 Saints du jour",
-    entity_today: "sensor.saints_du_jour_saint_du_jour",
-    entity_tomorrow: "sensor.saints_du_jour_saint_de_demain",
+    // Vides : la carte retrouve seule les capteurs (attributs feast_day / offset_days).
+    entity_today: "",
+    entity_tomorrow: "",
     label_today: "Saint du jour",
     label_tomorrow: "Saint de demain",
     icon: "🙏",
@@ -40,7 +41,7 @@
             type: "grid",
             name: "",
             schema: [
-              { name: "entity_today", required: true, selector: { entity: { domain: "sensor" } } },
+              { name: "entity_today", selector: { entity: { domain: "sensor" } } },
               { name: "label_today", selector: { text: {} } },
               { name: "entity_tomorrow", selector: { entity: { domain: "sensor" } } },
               { name: "label_tomorrow", selector: { text: {} } },
@@ -78,10 +79,34 @@
         .map((e) => `${e}=${e ? hass.states[e]?.state : ""}`)
         .join("|");
       this._hass = hass;
+      this._syncConfig(hass);
       if (key !== this._key) {
         this._key = key;
         this._render();
       }
+    }
+
+    // Si l'entité configurée est vide/absente mais résolue, on corrige la config
+    // une seule fois par valeur pour que l'éditeur HA affiche la bonne entité.
+    _syncConfig(hass) {
+      const c = this._config;
+      if (!c || !hass?.states) return;
+      const next = { ...c };
+      let changed = false;
+      [["entity_today", 0], ["entity_tomorrow", 1]].forEach(([k, off]) => {
+        if (c[k] && hass.states[c[k]]) return; // choix valide de l'utilisateur : respecté
+        const r = resolve(hass, c[k], off);
+        if (r && r !== c[k]) {
+          next[k] = r;
+          changed = true;
+        }
+      });
+      if (!changed) return;
+      const sig = `${next.entity_today}|${next.entity_tomorrow}`;
+      if (sig === this._synced) return;
+      this._synced = sig;
+      this._config = next;
+      this.dispatchEvent(new CustomEvent("config-changed", { detail: { config: next }, bubbles: true, composed: true }));
     }
 
     getCardSize() {
