@@ -14,10 +14,32 @@
   "entity": {
     "sensor": {
       "saint_du_jour": {
-        "name": "Saint du Jour"
+        "name": "Saint du Jour",
+        "state_attributes": {
+          "saint_name": {
+            "name": "Saint name"
+          },
+          "feast_day": {
+            "name": "Feast day"
+          },
+          "offset_days": {
+            "name": "Offset (days)"
+          }
+        }
       },
       "saint_de_demain": {
-        "name": "Saint de Demain"
+        "name": "Saint de Demain",
+        "state_attributes": {
+          "saint_name": {
+            "name": "Saint name"
+          },
+          "feast_day": {
+            "name": "Feast day"
+          },
+          "offset_days": {
+            "name": "Offset (days)"
+          }
+        }
       }
     }
   }
