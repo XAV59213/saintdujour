@@ -1,6 +1,8 @@
 # 🪿 Saints du Jour
 
-[![Downloads](https://img.shields.io/github/downloads/XAV59213/saintdujour/total.svg?label=Downloads)](https://github.com/XAV59213/saintdujour/releases)
+[![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz) [![Release](https://img.shields.io/github/v/release/XAV59213/saintdujour?label=release)](https://github.com/XAV59213/saintdujour/releases/latest) [![Hassfest](https://img.shields.io/github/actions/workflow/status/XAV59213/saintdujour/hassfest.yml?branch=main&label=Hassfest&logo=github)](https://github.com/XAV59213/saintdujour/actions/workflows/hassfest.yml) [![HACS validation](https://img.shields.io/github/actions/workflow/status/XAV59213/saintdujour/hacs.yml?branch=main&label=HACS%20validation&logo=github)](https://github.com/XAV59213/saintdujour/actions/workflows/hacs.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Downloads](https://img.shields.io/github/downloads/XAV59213/saintdujour/total.svg?label=Downloads)](https://github.com/XAV59213/saintdujour/releases) [![Version](https://img.shields.io/github/v/release/XAV59213/saintdujour?label=VERSION&color=blue)](https://github.com/XAV59213/saintdujour/releases/latest) [![Home Assistant](https://img.shields.io/badge/HOME%20ASSISTANT-%3E%3D2024.6.0-41BDF5.svg)](https://www.home-assistant.io)
+
+[![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=xav59213&emoji=&slug=xav59213&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://www.buymeacoffee.com/xav59213)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/XAV59213/saintdujour/main/custom_components/saintdujour/brand/icon.svg" alt="Saints du Jour" width="128" height="128">
@@ -11,8 +13,6 @@
 Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io), permettant d’afficher chaque jour le ou les saints célébrés selon le calendrier liturgique français.
 
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=XAV59213&repository=saintdujour&category=integration)
-
-<a href="https://www.buymeacoffee.com/xav59213"><img src="https://img.buymeacoffee.com/button-api/?text=xav59213&emoji=&slug=xav59213&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
 ## 📦 Fonctionnalités
 
