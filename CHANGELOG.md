@@ -1,6 +1,6 @@
 # Changelog
 
-## Non publié
+## 1.3.3 - 2026-10-31
 
 ### Corrigé
 - Carte Lovelace : résolution automatique des capteurs si l’entity_id configuré est absent (attributs `feast_day` + `offset_days`, puis `sensor.saint_du_jour` / `sensor.saints_du_jour_saint_du_jour` et équivalents demain). Fini « Entité introuvable » quand les IDs diffèrent.
