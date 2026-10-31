@@ -1,6 +1,6 @@
 # Changelog
 
-## Non publié
+## 1.3.1 - 2026-10-31
 
 ### Corrigé
 - Carte Lovelace : entités par défaut alignées sur les vrais entity_id HA (`sensor.saints_du_jour_saint_du_jour`, `sensor.saints_du_jour_saint_de_demain`) au lieu de `sensor.saint_du_jour` / `sensor.saint_de_demain` (« Entité introuvable »). Doc mise à jour.
