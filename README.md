@@ -76,6 +76,8 @@ show_tomorrow: true
 | `entity_tomorrow` | `sensor.saints_du_jour_saint_de_demain` | Capteur de demain |
 | `label_today` / `label_tomorrow` | `Saint du jour` / `Saint de demain` | Libellés |
 | `icon` | `🙏` | Emoji affiché devant chaque ligne |
+
+La carte retrouve automatiquement les capteurs (attributs `feast_day` / `offset_days`) même si les entity_id ont été renommés ou diffèrent ; une entité valide choisie dans l’éditeur reste prioritaire.
 | `show_tomorrow` | `true` | Affiche la ligne de demain |
 
 ## 🧾 Exemple de carte Lovelace (standard)
