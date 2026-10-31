@@ -20,7 +20,7 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 - Affiche aussi le saint de demain (`sensor.saint_de_demain`), utile si l’on célèbre la veille.
 - Mise à jour quotidienne des capteurs.
 - Intégration native via l’interface graphique Home Assistant.
-- Compatible avec une carte Lovelace type `entity`.
+- Carte Lovelace native **Saint du jour** (`custom:saintdujour-card`) livrée avec l’intégration, avec éditeur visuel.
 
 ## 🛠️ Installation
 
@@ -48,7 +48,37 @@ Copiez `custom_components/saintdujour/` dans `/config/custom_components/`, redé
 
 Aucune configuration manuelle n’est nécessaire une fois l’intégration ajoutée.
 
-## 🧾 Exemple de carte Lovelace
+## 🙏 Carte Lovelace native
+
+L’intégration embarque sa propre carte : rien à copier dans `www`, aucune ressource à ajouter. Le fichier est servi depuis `custom_components/saintdujour/frontend/saintdujour-card.js` (URL `/saintdujour/saintdujour-card.js`) et chargé automatiquement au démarrage de Home Assistant.
+
+1. Installer / mettre à jour l’intégration puis **redémarrer** Home Assistant (vider le cache du navigateur si besoin).
+2. Tableau de bord → **Modifier** → **Ajouter une carte** → chercher **« Saint du jour »**.
+3. Régler dans l’éditeur : entités du jour / de demain, libellés, titre, icône, affichage de demain.
+
+En YAML :
+
+```yaml
+type: custom:saintdujour-card
+title: 🙏 Saints du jour
+entity_today: sensor.saint_du_jour
+entity_tomorrow: sensor.saint_de_demain
+label_today: Saint du jour
+label_tomorrow: Saint de demain
+icon: 🙏
+show_tomorrow: true
+```
+
+| Option | Défaut | Description |
+| --- | --- | --- |
+| `title` | `🙏 Saints du jour` | Titre (vide = pas de titre) |
+| `entity_today` | `sensor.saint_du_jour` | Capteur du jour |
+| `entity_tomorrow` | `sensor.saint_de_demain` | Capteur de demain |
+| `label_today` / `label_tomorrow` | `Saint du jour` / `Saint de demain` | Libellés |
+| `icon` | `🙏` | Emoji affiché devant chaque ligne |
+| `show_tomorrow` | `true` | Affiche la ligne de demain |
+
+## 🧾 Exemple de carte Lovelace (standard)
 
 ```yaml
 type: entities

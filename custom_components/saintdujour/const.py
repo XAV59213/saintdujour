@@ -377,3 +377,8 @@ SAINTS_OF_THE_DAY = {
     "30:12": "les Roger",
     "31:12": "les Sylvestre"
 }
+
+# Carte Lovelace native livrée avec l'intégration
+URL_BASE = "/saintdujour"
+CARD_FILENAME = "saintdujour-card.js"
+CARD_URL = f"{URL_BASE}/{CARD_FILENAME}"
