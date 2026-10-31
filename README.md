@@ -19,7 +19,6 @@
 
 Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io), permettant d’afficher chaque jour le ou les saints célébrés selon le calendrier liturgique français.
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=XAV59213&repository=saintdujour&category=integration)
 
 ## 📦 Fonctionnalités
 
@@ -33,7 +32,6 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 
 ### Via HACS (recommandé)
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=XAV59213&repository=saintdujour&category=integration)
 
 1. Ouvrez **HACS**.
 2. Menu ⋮ → **Dépôts personnalisés**.
