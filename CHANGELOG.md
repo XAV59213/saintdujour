@@ -1,5 +1,10 @@
 # Changelog
 
+## Non publié
+
+### Corrigé
+- Carte Lovelace : plus d’entity_id préremplis (défauts vides, résolution auto). Si l’entité configurée est vide/absente, la carte écrit l’entity_id réel dans la config (`config-changed`, une seule fois) : fini « Entité inconnue sélectionnée » dans l’éditeur. Un choix valide de l’utilisateur est respecté.
+
 ## 1.3.3 - 2026-10-31
 
 ### Corrigé
