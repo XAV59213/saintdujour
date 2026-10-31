@@ -30,9 +30,6 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 
 ## 🛠️ Installation
 
-### Via HACS (recommandé)
-
-
 1. Ouvrez **HACS**.
 2. Menu ⋮ → **Dépôts personnalisés**.
 3. Ajoutez `https://github.com/XAV59213/saintdujour` en type **Intégration**.
