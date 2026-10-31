@@ -8,6 +8,7 @@ from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import config_validation as cv
 
 from .const import DOMAIN
+from .frontend import async_register_card
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -19,6 +20,12 @@ CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     """Configurer le composant saintdujour."""
     hass.data.setdefault(DOMAIN, {})
+    if not hass.data[DOMAIN].get("_card_registered"):
+        try:
+            await async_register_card(hass)
+            hass.data[DOMAIN]["_card_registered"] = True
+        except Exception as err:  # noqa: BLE001
+            _LOGGER.warning("Carte Lovelace non enregistrée : %s", err)
     return True
 
 
