@@ -2,8 +2,8 @@
 (() => {
   const DEFAULTS = {
     title: "🙏 Saints du jour",
-    entity_today: "sensor.saint_du_jour",
-    entity_tomorrow: "sensor.saint_de_demain",
+    entity_today: "sensor.saints_du_jour_saint_du_jour",
+    entity_tomorrow: "sensor.saints_du_jour_saint_de_demain",
     label_today: "Saint du jour",
     label_tomorrow: "Saint de demain",
     icon: "🙏",

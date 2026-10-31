@@ -17,7 +17,7 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 ## 📦 Fonctionnalités
 
 - Affiche automatiquement le saint du jour (par exemple : « les Pierre et Paul » pour le 29 juin).
-- Affiche aussi le saint de demain (`sensor.saint_de_demain`), utile si l’on célèbre la veille.
+- Affiche aussi le saint de demain (`sensor.saints_du_jour_saint_de_demain`), utile si l’on célèbre la veille.
 - Mise à jour quotidienne des capteurs.
 - Intégration native via l’interface graphique Home Assistant.
 - Carte Lovelace native **Saint du jour** (`custom:saintdujour-card`) livrée avec l’intégration, avec éditeur visuel.
@@ -35,7 +35,7 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 5. **Ensuite seulement**, redémarrez Home Assistant.
 6. Allez dans **Paramètres → Appareils & services → Ajouter une intégration** et ajoutez **Saints du Jour**.
 
-⚠️ HACS installe seulement les fichiers. Les capteurs `sensor.saint_du_jour` et `sensor.saint_de_demain` n’apparaissent **qu’après** l’étape 6. L’entité `update.saints_du_jour` vient de HACS (mise à jour du composant), ce n’est pas le capteur du saint.
+⚠️ HACS installe seulement les fichiers. Les capteurs `sensor.saints_du_jour_saint_du_jour` et `sensor.saints_du_jour_saint_de_demain` n’apparaissent **qu’après** l’étape 6. L’entité `update.saints_du_jour` vient de HACS (mise à jour du composant), ce n’est pas le capteur du saint.
 
 > **Le dépôt disparaît après un redémarrage ?**  
 > HACS retire les dépôts personnalisés qui n’ont pas encore été téléchargés. Ajoutez le dépôt, téléchargez l’intégration, *puis* redémarrez.
@@ -61,8 +61,8 @@ En YAML :
 ```yaml
 type: custom:saintdujour-card
 title: 🙏 Saints du jour
-entity_today: sensor.saint_du_jour
-entity_tomorrow: sensor.saint_de_demain
+entity_today: sensor.saints_du_jour_saint_du_jour
+entity_tomorrow: sensor.saints_du_jour_saint_de_demain
 label_today: Saint du jour
 label_tomorrow: Saint de demain
 icon: 🙏
@@ -72,8 +72,8 @@ show_tomorrow: true
 | Option | Défaut | Description |
 | --- | --- | --- |
 | `title` | `🙏 Saints du jour` | Titre (vide = pas de titre) |
-| `entity_today` | `sensor.saint_du_jour` | Capteur du jour |
-| `entity_tomorrow` | `sensor.saint_de_demain` | Capteur de demain |
+| `entity_today` | `sensor.saints_du_jour_saint_du_jour` | Capteur du jour |
+| `entity_tomorrow` | `sensor.saints_du_jour_saint_de_demain` | Capteur de demain |
 | `label_today` / `label_tomorrow` | `Saint du jour` / `Saint de demain` | Libellés |
 | `icon` | `🙏` | Emoji affiché devant chaque ligne |
 | `show_tomorrow` | `true` | Affiche la ligne de demain |
@@ -83,9 +83,9 @@ show_tomorrow: true
 ```yaml
 type: entities
 entities:
-  - entity: sensor.saint_du_jour
+  - entity: sensor.saints_du_jour_saint_du_jour
     name: Saint du Jour
-  - entity: sensor.saint_de_demain
+  - entity: sensor.saints_du_jour_saint_de_demain
     name: Saint de Demain
 ```
 
@@ -93,8 +93,8 @@ entities:
 
 | Entité | Description |
 | --- | --- |
-| `sensor.saint_du_jour` | Saint célébré aujourd’hui |
-| `sensor.saint_de_demain` | Saint célébré demain |
+| `sensor.saints_du_jour_saint_du_jour` | Saint célébré aujourd’hui |
+| `sensor.saints_du_jour_saint_de_demain` | Saint célébré demain |
 
 | Attribut | Description |
 | --- | --- |
