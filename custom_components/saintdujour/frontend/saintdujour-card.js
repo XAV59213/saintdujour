@@ -13,6 +13,24 @@
   const esc = (v) =>
     String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
+  const CANDIDATES = {
+    0: ["sensor.saints_du_jour_saint_du_jour", "sensor.saint_du_jour"],
+    1: ["sensor.saints_du_jour_saint_de_demain", "sensor.saint_de_demain"],
+  };
+
+  // Retrouve le capteur même si l'entity_id a été renommé / diffère.
+  const resolve = (hass, entity, offset) => {
+    const states = hass?.states || {};
+    if (entity && states[entity]) return entity;
+    const byAttr = Object.keys(states).find((id) => {
+      if (!id.startsWith("sensor.")) return false;
+      const a = states[id].attributes || {};
+      return a.feast_day !== undefined && Number(a.offset_days) === offset;
+    });
+    if (byAttr) return byAttr;
+    return CANDIDATES[offset].find((id) => states[id]) || null;
+  };
+
   class SaintDuJourCard extends HTMLElement {
     static getConfigForm() {
       return {
@@ -56,7 +74,9 @@
 
     set hass(hass) {
       const c = this._config || DEFAULTS;
-      const key = [c.entity_today, c.entity_tomorrow].map((e) => hass.states[e]?.state).join("|");
+      const key = [resolve(hass, c.entity_today, 0), resolve(hass, c.entity_tomorrow, 1)]
+        .map((e) => `${e}=${e ? hass.states[e]?.state : ""}`)
+        .join("|");
       this._hass = hass;
       if (key !== this._key) {
         this._key = key;
@@ -68,9 +88,10 @@
       return this._config?.show_tomorrow === false ? 2 : 3;
     }
 
-    _state(entity) {
-      if (!entity) return null;
-      const s = this._hass?.states?.[entity];
+    _state(entity, offset) {
+      if (!this._hass) return null;
+      const id = resolve(this._hass, entity, offset);
+      const s = id ? this._hass.states[id] : null;
       if (!s) return { missing: true, text: `Entité introuvable : ${entity}` };
       if (["unknown", "unavailable"].includes(s.state)) return { text: "—" };
       return { text: s.state };
@@ -88,8 +109,8 @@
       if (!this._config) return;
       if (!this.shadowRoot) this.attachShadow({ mode: "open" });
       const c = this._config;
-      const today = this._state(c.entity_today);
-      const tomorrow = c.show_tomorrow !== false ? this._state(c.entity_tomorrow) : null;
+      const today = this._state(c.entity_today, 0);
+      const tomorrow = c.show_tomorrow !== false ? this._state(c.entity_tomorrow, 1) : null;
       this.shadowRoot.innerHTML = `
         <style>
           ha-card { padding: 16px; }
