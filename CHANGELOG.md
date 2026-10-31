@@ -1,6 +1,6 @@
 # Changelog
 
-## Non publié
+## 1.3.0 - 2026-10-31
 
 ### Ajouté
 - Carte Lovelace native **Saint du jour** (`custom:saintdujour-card`) livrée avec l’intégration : saint du jour + saint de demain, style soigné avec 🙏.
