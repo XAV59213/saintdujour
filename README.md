@@ -1,8 +1,15 @@
 # 🪿 Saints du Jour
 
-[![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz) [![Release](https://img.shields.io/github/v/release/XAV59213/saintdujour?label=release)](https://github.com/XAV59213/saintdujour/releases/latest) [![Hassfest](https://img.shields.io/github/actions/workflow/status/XAV59213/saintdujour/hassfest.yml?branch=main&label=Hassfest&logo=github)](https://github.com/XAV59213/saintdujour/actions/workflows/hassfest.yml) [![HACS validation](https://img.shields.io/github/actions/workflow/status/XAV59213/saintdujour/hacs.yml?branch=main&label=HACS%20validation&logo=github)](https://github.com/XAV59213/saintdujour/actions/workflows/hacs.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Downloads](https://img.shields.io/github/downloads/XAV59213/saintdujour/total.svg?label=Downloads)](https://github.com/XAV59213/saintdujour/releases) [![Version](https://img.shields.io/github/v/release/XAV59213/saintdujour?label=VERSION&color=blue)](https://github.com/XAV59213/saintdujour/releases/latest) [![Home Assistant](https://img.shields.io/badge/HOME%20ASSISTANT-%3E%3D2024.6.0-41BDF5.svg)](https://www.home-assistant.io)
+[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://hacs.xyz) [![Release](https://img.shields.io/github/v/release/XAV59213/saintdujour?label=release)](https://github.com/XAV59213/saintdujour/releases/latest) [![Hassfest](https://img.shields.io/github/actions/workflow/status/XAV59213/saintdujour/hassfest.yml?branch=main&label=Hassfest&logo=github)](https://github.com/XAV59213/saintdujour/actions/workflows/hassfest.yml) [![HACS validation](https://img.shields.io/github/actions/workflow/status/XAV59213/saintdujour/hacs.yml?branch=main&label=HACS%20validation&logo=github)](https://github.com/XAV59213/saintdujour/actions/workflows/hacs.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Downloads](https://img.shields.io/github/downloads/XAV59213/saintdujour/total.svg?label=Downloads)](https://github.com/XAV59213/saintdujour/releases) [![Version](https://img.shields.io/github/v/release/XAV59213/saintdujour?label=VERSION&color=blue)](https://github.com/XAV59213/saintdujour/releases/latest) [![Home Assistant](https://img.shields.io/badge/HOME%20ASSISTANT-%3E%3D2024.6.0-41BDF5.svg)](https://www.home-assistant.io)
 
 [![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=xav59213&emoji=&slug=xav59213&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://www.buymeacoffee.com/xav59213)
+
+<p align="center">
+  <a href="https://hacs.xyz"><img src="https://img.shields.io/badge/HACS-Default-41BDF5.svg" alt="HACS Default"></a>
+</p>
+
+> [!TIP]
+> Saints du Jour est maintenant disponible directement dans la bibliothèque HACS. Plus besoin d’ajouter le dépôt personnalisé : cherche simplement « Saints du Jour » dans HACS.
 
 ## Via HACS (recommandé)
 
@@ -30,17 +37,15 @@ Un composant personnalisé pour [Home Assistant](https://www.home-assistant.io),
 
 ## 🛠️ Installation
 
-1. Ouvrez **HACS**.
-2. Menu ⋮ → **Dépôts personnalisés**.
-3. Ajoutez `https://github.com/XAV59213/saintdujour` en type **Intégration**.
-4. Cherchez **Saints du Jour** dans HACS et cliquez **Télécharger**.
-5. **Ensuite seulement**, redémarrez Home Assistant.
-6. Allez dans **Paramètres → Appareils & services → Ajouter une intégration** et ajoutez **Saints du Jour**.
+1. Ouvrez **HACS** dans Home Assistant.
+2. Recherchez **Saints du Jour**.
+3. Cliquez **Télécharger**.
+4. Redémarrez Home Assistant.
+5. Allez dans **Paramètres → Appareils & services → Ajouter une intégration** et ajoutez **Saints du Jour**.
 
-⚠️ HACS installe seulement les fichiers. Les capteurs `sensor.saints_du_jour_saint_du_jour` et `sensor.saints_du_jour_saint_de_demain` n’apparaissent **qu’après** l’étape 6. L’entité `update.saints_du_jour` vient de HACS (mise à jour du composant), ce n’est pas le capteur du saint.
+⚠️ HACS installe seulement les fichiers. Les capteurs `sensor.saints_du_jour_saint_du_jour` et `sensor.saints_du_jour_saint_de_demain` n’apparaissent **qu’après** l’étape 5. L’entité `update.saints_du_jour` vient de HACS (mise à jour du composant), ce n’est pas le capteur du saint.
 
-> **Le dépôt disparaît après un redémarrage ?**  
-> HACS retire les dépôts personnalisés qui n’ont pas encore été téléchargés. Ajoutez le dépôt, téléchargez l’intégration, *puis* redémarrez.
+ℹ️ L’ajout d’un dépôt personnalisé n’est plus nécessaire : Saints du Jour fait partie de la liste HACS par défaut.
 
 ### Installation manuelle
 
