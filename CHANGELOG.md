@@ -1,5 +1,10 @@
 # Changelog
 
+## Non publié
+
+### Corrigé
+- Calendrier : ajout du 25 décembre (« les Noël », calendrier PTT) qui manquait — les capteurs affichaient « Inconnu » ce jour-là (et la veille pour « Saint de demain »). Test de complétude du calendrier (366 jours) ajouté.
+
 ## 1.3.4 - 2026-10-31
 
 ### Corrigé

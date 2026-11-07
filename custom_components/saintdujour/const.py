@@ -370,6 +370,7 @@ SAINTS_OF_THE_DAY = {
     "22:12": "les Xaviere",
     "23:12": "les Armand",
     "24:12": "les Adele",
+    "25:12": "les Noël",
     "26:12": "les Etienne",
     "27:12": "les Jean",
     "28:12": "les Innocents",
