@@ -1,0 +1,6 @@
+# Dépendances de test (épinglées ; pytest-homeassistant-custom-component fixe homeassistant==2026.10.4)
+pytest-homeassistant-custom-component==0.13.375
+home-assistant-frontend==20261028.5
+pytest-cov==7.1.0
+mypy==2.4.1
+ruff==0.17.4

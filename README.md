@@ -55,6 +55,71 @@ Copiez `custom_components/saintdujour/` dans `/config/custom_components/`, redé
 
 Aucune configuration manuelle n’est nécessaire une fois l’intégration ajoutée.
 
+L’intégration n’a **ni paramètre d’installation ni options** : l’ajout se fait en un clic et une seule instance est possible.
+
+## 📋 Entités et attributs
+
+L’intégration crée un appareil de type service **Saints du Jour** avec deux capteurs :
+
+| Entité (nom par défaut) | Valeur | Attributs |
+| --- | --- | --- |
+| `sensor.saints_du_jour_saint_du_jour` | saint du jour (ex. « les Noël ») | `saint_name`, `feast_day` (`JJ:MM`), `offset_days` = 0 |
+| `sensor.saints_du_jour_saint_de_demain` | saint de demain | `saint_name`, `feast_day` (`JJ:MM`), `offset_days` = 1 |
+
+Les entity_id peuvent différer sur une installation ancienne (ex. `sensor.saint_du_jour`) : la carte les retrouve grâce aux attributs.
+
+## 🔄 Mise à jour des données
+
+Le calendrier est **embarqué** dans l’intégration (aucun accès Internet). Les capteurs sont recalculés **chaque minute** à partir de la date locale de Home Assistant : le changement de saint est visible au plus tard une minute après minuit.
+
+## 💡 Cas d’usage et exemples
+
+- Souhaiter la fête du jour sur un écran mural ou dans une notification matinale.
+- Anticiper la fête de demain (bouquet, message) grâce au capteur « Saint de Demain ».
+
+Notification chaque matin :
+
+```yaml
+automation:
+  - alias: Fête du jour
+    triggers:
+      - trigger: time
+        at: "08:00:00"
+    actions:
+      - action: notify.notify
+        data:
+          message: "Aujourd’hui, on fête {{ states('sensor.saints_du_jour_saint_du_jour') }} 🙏"
+```
+
+Rappel la veille pour un prénom précis :
+
+```yaml
+automation:
+  - alias: Rappel fête de Marie
+    triggers:
+      - trigger: time
+        at: "19:00:00"
+    conditions:
+      - condition: template
+        value_template: "{{ 'Marie' in states('sensor.saints_du_jour_saint_de_demain') }}"
+    actions:
+      - action: notify.notify
+        data:
+          message: "Demain c’est la fête des {{ state_attr('sensor.saints_du_jour_saint_de_demain', 'saint_name') }} !"
+```
+
+## ⚠️ Limitations connues
+
+- Un seul saint par jour, issu d’un calendrier fixe français (pas les fêtes mobiles comme Pâques, ni les calendriers régionaux).
+- Valeurs en français uniquement, quelle que soit la langue de Home Assistant.
+- Si une date était absente du calendrier, le capteur afficherait « Inconnu » (un test vérifie que les 366 jours sont couverts).
+
+## 🗑️ Suppression
+
+1. **Paramètres → Appareils & services → Saints du Jour → ⋮ → Supprimer** : les capteurs et l’appareil sont retirés.
+2. Retirer la carte `custom:saintdujour-card` de vos tableaux de bord si elle y figure.
+3. Dans **HACS**, ouvrir **Saints du Jour → ⋮ → Supprimer**, puis redémarrer Home Assistant (en installation manuelle : supprimer `custom_components/saintdujour/`).
+
 ## 🙏 Carte Lovelace native
 
 L’intégration embarque sa propre carte : rien à copier dans `www`, aucune ressource à ajouter. Le fichier est servi depuis `custom_components/saintdujour/frontend/saintdujour-card.js` (URL `/saintdujour/saintdujour-card.js`) et chargé automatiquement au démarrage de Home Assistant.
@@ -124,12 +189,30 @@ C’est normal après HACS. Cette entité sert à mettre à jour le module. Pour
 
 Les capteurs apparaissent alors sous l’appareil **Saints du Jour**.
 
+### Le capteur affiche « Inconnu »
+
+Vérifiez le fuseau horaire et la date de Home Assistant (**Paramètres → Système → Général**), puis ouvrez une [issue](https://github.com/XAV59213/saintdujour/issues) en joignant les diagnostics.
+
+### Diagnostics
+
+**Paramètres → Appareils & services → Saints du Jour → ⋮ → Télécharger les diagnostics** : fuseau horaire, taille du calendrier, saint calculé pour aujourd’hui et demain (aucune donnée personnelle).
+
+### Journaux de débogage
+
+```yaml
+logger:
+  logs:
+    custom_components.saintdujour: debug
+```
+
 ## 🚀 Développement
 
 - Domaine : `saintdujour`
 - Fichier principal : `sensor.py`
 - Flux de configuration intégré (`config_flow`)
 - Aucune dépendance externe requise
+- Tests : `pip install -r requirements_test.txt` puis `pytest --cov=custom_components/saintdujour`, `mypy custom_components/saintdujour` (strict) et `ruff check custom_components tests` — exécutés par le workflow **Tests** sur chaque PR.
+- `quality_scale.yaml` : auto-évaluation des règles Quality Scale (indicative, aucun niveau officiel pour une intégration custom).
 - Images de marque locales (Home Assistant 2026.3+ / HACS) dans `custom_components/saintdujour/brand/` :
   - `icon.png` — 256×256
   - `icon@2x.png` — 512×512

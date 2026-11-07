@@ -1,0 +1,173 @@
+# Auto-évaluation Quality Scale (règles hassfest actuelles, home-assistant/core dev).
+# Intégration custom HACS : aucun niveau officiel n'est revendiqué
+# (pas de clé "quality_scale" dans manifest.json).
+rules:
+  # Bronze
+  action-setup:
+    status: exempt
+    comment: Aucune action (service) enregistrée.
+  appropriate-polling:
+    status: done
+    comment: Calcul local sans I/O ; SCAN_INTERVAL = 1 min (valeur qui ne change qu’à minuit, retard max 1 min).
+  brands:
+    status: done
+    comment: Dossier custom_components/saintdujour/brand (icon, logo, variantes dark).
+  common-modules:
+    status: done
+    comment: Constantes dans const.py ; pas de coordinateur ni d'entité de base nécessaires (une seule classe de capteur).
+  config-flow:
+    status: done
+    comment: config_flow.py, ajout en un clic sans paramètre ; textes dans strings.json/translations.
+  config-flow-test-coverage:
+    status: done
+    comment: tests/test_init.py — création d’entrée et abandon already_configured (100 % de config_flow.py).
+  dependency-transparency:
+    status: exempt
+    comment: Aucune dépendance Python externe (requirements vide).
+  docs-actions:
+    status: exempt
+    comment: Aucune action fournie.
+  docs-high-level-description:
+    status: done
+    comment: README.md (présentation de l'intégration).
+  docs-installation-instructions:
+    status: done
+    comment: README.md, installation via HACS puis ajout de l'intégration.
+  docs-removal-instructions:
+    status: done
+    comment: README.md, section « Suppression ».
+  entity-event-setup:
+    status: exempt
+    comment: Aucun abonnement à des événements.
+  entity-unique-id:
+    status: done
+    comment: unique_id fixes saintdujour_sensor / saintdujour_sensor_tomorrow.
+  has-entity-name:
+    status: done
+    comment: _attr_has_entity_name = True dans sensor.py.
+  runtime-data:
+    status: exempt
+    comment: Aucune donnée d'exécution à stocker par entrée.
+  test-before-configure:
+    status: exempt
+    comment: Aucune connexion externe ni identifiant à tester.
+  test-before-setup:
+    status: exempt
+    comment: Données embarquées dans const.py, rien d'externe à vérifier au démarrage.
+  unique-config-entry:
+    status: done
+    comment: async_set_unique_id(DOMAIN) + _abort_if_unique_id_configured dans config_flow.py.
+  docs-conditions:
+    status: exempt
+    comment: Aucune condition fournie.
+  docs-triggers:
+    status: exempt
+    comment: Aucun déclencheur fourni.
+
+  # Silver
+  action-exceptions:
+    status: exempt
+    comment: Aucune action fournie.
+  config-entry-unloading:
+    status: done
+    comment: async_unload_entry -> async_unload_platforms dans __init__.py.
+  docs-configuration-parameters:
+    status: exempt
+    comment: Pas d'options flow.
+  docs-installation-parameters:
+    status: exempt
+    comment: Aucun paramètre demandé à l'installation.
+  entity-unavailable:
+    status: exempt
+    comment: Source locale toujours disponible.
+  integration-owner:
+    status: done
+    comment: codeowners @xav59213 dans manifest.json.
+  log-when-unavailable:
+    status: exempt
+    comment: Source locale, jamais indisponible.
+  parallel-updates:
+    status: done
+    comment: PARALLEL_UPDATES = 0 dans sensor.py (calcul local, aucune limite nécessaire).
+  reauthentication-flow:
+    status: exempt
+    comment: Aucune authentification.
+  test-coverage:
+    status: done
+    comment: pytest + pytest-cov — 100 % sur tous les modules, seuil 95 % imposé par .github/workflows/tests.yml.
+
+  # Gold
+  devices:
+    status: done
+    comment: DeviceInfo « Saints du Jour » (entry_type SERVICE) regroupant les deux capteurs ; vérifié par tests/test_init.py.
+  diagnostics:
+    status: done
+    comment: diagnostics.py (entrée, fuseau, taille du calendrier, saints du jour/demain) ; testé.
+  discovery:
+    status: exempt
+    comment: Service calculé localement, rien à découvrir.
+  discovery-update-info:
+    status: exempt
+    comment: Pas de découverte.
+  docs-data-update:
+    status: done
+    comment: README.md, section « Mise à jour des données ».
+  docs-examples:
+    status: done
+    comment: README.md, section « Cas d’usage et exemples » (automatisations).
+  docs-known-limitations:
+    status: done
+    comment: README.md, section « Limitations connues ».
+  docs-supported-devices:
+    status: exempt
+    comment: Aucun appareil physique.
+  docs-supported-functions:
+    status: done
+    comment: README.md, section « Entités et attributs ».
+  docs-troubleshooting:
+    status: done
+    comment: README.md, section « Dépannage » (Inconnu, diagnostics, logs).
+  docs-use-cases:
+    status: done
+    comment: README.md, section « Cas d’usage et exemples ».
+  dynamic-devices:
+    status: exempt
+    comment: Appareil unique et fixe.
+  entity-category:
+    status: done
+    comment: Capteurs principaux, aucune catégorie requise (choix par défaut correct).
+  entity-device-class:
+    status: exempt
+    comment: Valeur texte libre, aucune device_class applicable.
+  entity-disabled-by-default:
+    status: exempt
+    comment: Les deux capteurs sont le cœur de l'intégration.
+  entity-translations:
+    status: done
+    comment: Noms via translation_key + strings.json/translations (plus de _attr_name) ; friendly_name vérifié par test.
+  exception-translations:
+    status: exempt
+    comment: Aucune exception levée vers l’utilisateur — pas d’action, et le wrapper ConfigEntryNotReady inutile a été retiré.
+  icon-translations:
+    status: done
+    comment: icons.json (mdi:church par translation_key), plus de _attr_icon.
+  reconfiguration-flow:
+    status: exempt
+    comment: Aucun paramètre à reconfigurer.
+  repair-issues:
+    status: exempt
+    comment: Aucun cas réparable par l'utilisateur.
+  stale-devices:
+    status: exempt
+    comment: Appareil unique, jamais obsolète.
+
+  # Platinum
+  async-dependency:
+    status: exempt
+    comment: Aucune dépendance externe.
+  inject-websession:
+    status: exempt
+    comment: Aucun appel HTTP.
+  strict-typing:
+    status: done
+    comment: mypy --strict (mypy.ini) sans erreur sur custom_components/saintdujour, exécuté en CI. Un seul type-ignore documenté (import StaticPathConfig ré-exporté par HA).

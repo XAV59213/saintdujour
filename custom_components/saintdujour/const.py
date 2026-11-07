@@ -1,16 +1,14 @@
 """Constantes pour le composant Saints du Jour.""" 
 DOMAIN = "saintdujour"
-SENSOR_NAME = "Saint du Jour"
 SENSOR_UNIQUE_ID = f"{DOMAIN}_sensor"
 
-TOMORROW_SENSOR_NAME = "Saint de Demain"
 TOMORROW_SENSOR_UNIQUE_ID = f"{DOMAIN}_sensor_tomorrow"
 
 ATTR_SAINT_NAME = "saint_name"
 ATTR_FEAST_DAY = "feast_day"
 ATTR_OFFSET_DAYS = "offset_days"
 
-SAINTS_OF_THE_DAY = {
+SAINTS_OF_THE_DAY: dict[str, str] = {
     "01:01": "les Ugolin",
     "02:01": "les Basile",
     "03:01": "les Geneviève",
@@ -370,6 +368,7 @@ SAINTS_OF_THE_DAY = {
     "22:12": "les Xaviere",
     "23:12": "les Armand",
     "24:12": "les Adele",
+    "25:12": "les Noël",
     "26:12": "les Etienne",
     "27:12": "les Jean",
     "28:12": "les Innocents",

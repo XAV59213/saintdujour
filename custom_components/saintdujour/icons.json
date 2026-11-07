@@ -1,0 +1,8 @@
+{
+  "entity": {
+    "sensor": {
+      "saint_du_jour": { "default": "mdi:church" },
+      "saint_de_demain": { "default": "mdi:church" }
+    }
+  }
+}
