@@ -1,5 +1,10 @@
 # Changelog
 
+## Non publié
+
+### Ajouté
+- `quality_scale.yaml` : auto-évaluation des 54 règles Quality Scale actuelles (done / todo / exempt justifiés). Aucun niveau officiel revendiqué (intégration custom HACS, manifest inchangé).
+
 ## 1.3.4 - 2026-10-31
 
 ### Corrigé
