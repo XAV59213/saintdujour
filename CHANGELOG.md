@@ -2,6 +2,8 @@
 
 ## Non publié
 
+## 1.4.0 - 2026-11-07
+
 ### Ajouté
 - Diagnostics téléchargeables (`diagnostics.py`) : fuseau, taille du calendrier, saints calculés.
 - `icons.json` : icône des capteurs via les traductions d’icônes.
