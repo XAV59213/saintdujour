@@ -8,7 +8,7 @@ rules:
     comment: Aucune action (service) enregistrée.
   appropriate-polling:
     status: done
-    comment: Calcul local sans I/O ; intervalle par défaut de la plateforme sensor (30 s), coût négligeable.
+    comment: Calcul local sans I/O ; SCAN_INTERVAL = 1 min (valeur qui ne change qu’à minuit, retard max 1 min).
   brands:
     status: done
     comment: Dossier custom_components/saintdujour/brand (icon, logo, variantes dark).
@@ -19,8 +19,8 @@ rules:
     status: done
     comment: config_flow.py, ajout en un clic sans paramètre ; textes dans strings.json/translations.
   config-flow-test-coverage:
-    status: todo
-    comment: Aucun test automatisé dans le dépôt.
+    status: done
+    comment: tests/test_init.py — création d’entrée et abandon already_configured (100 % de config_flow.py).
   dependency-transparency:
     status: exempt
     comment: Aucune dépendance Python externe (requirements vide).
@@ -34,8 +34,8 @@ rules:
     status: done
     comment: README.md, installation via HACS puis ajout de l'intégration.
   docs-removal-instructions:
-    status: todo
-    comment: Pas de section de suppression dans le README.
+    status: done
+    comment: README.md, section « Suppression ».
   entity-event-setup:
     status: exempt
     comment: Aucun abonnement à des événements.
@@ -87,22 +87,22 @@ rules:
     status: exempt
     comment: Source locale, jamais indisponible.
   parallel-updates:
-    status: todo
-    comment: PARALLEL_UPDATES non défini dans sensor.py.
+    status: done
+    comment: PARALLEL_UPDATES = 0 dans sensor.py (calcul local, aucune limite nécessaire).
   reauthentication-flow:
     status: exempt
     comment: Aucune authentification.
   test-coverage:
-    status: todo
-    comment: Aucun test automatisé.
+    status: done
+    comment: pytest + pytest-cov — 100 % sur tous les modules, seuil 95 % imposé par .github/workflows/tests.yml.
 
   # Gold
   devices:
     status: done
-    comment: DeviceInfo « Saints du Jour » regroupant les deux capteurs.
+    comment: DeviceInfo « Saints du Jour » (entry_type SERVICE) regroupant les deux capteurs ; vérifié par tests/test_init.py.
   diagnostics:
-    status: todo
-    comment: Pas de diagnostics.py.
+    status: done
+    comment: diagnostics.py (entrée, fuseau, taille du calendrier, saints du jour/demain) ; testé.
   discovery:
     status: exempt
     comment: Service calculé localement, rien à découvrir.
@@ -110,26 +110,26 @@ rules:
     status: exempt
     comment: Pas de découverte.
   docs-data-update:
-    status: todo
-    comment: Fréquence de mise à jour non documentée.
+    status: done
+    comment: README.md, section « Mise à jour des données ».
   docs-examples:
-    status: todo
-    comment: Exemples d'automatisation à ajouter au README.
+    status: done
+    comment: README.md, section « Cas d’usage et exemples » (automatisations).
   docs-known-limitations:
-    status: todo
-    comment: Limites (calendrier fixe, une seule langue) non documentées.
+    status: done
+    comment: README.md, section « Limitations connues ».
   docs-supported-devices:
     status: exempt
     comment: Aucun appareil physique.
   docs-supported-functions:
-    status: todo
-    comment: Capteurs/attributs à lister explicitement dans le README.
+    status: done
+    comment: README.md, section « Entités et attributs ».
   docs-troubleshooting:
-    status: todo
-    comment: Pas de section dépannage.
+    status: done
+    comment: README.md, section « Dépannage » (Inconnu, diagnostics, logs).
   docs-use-cases:
-    status: todo
-    comment: Cas d'usage à documenter.
+    status: done
+    comment: README.md, section « Cas d’usage et exemples ».
   dynamic-devices:
     status: exempt
     comment: Appareil unique et fixe.
@@ -143,14 +143,14 @@ rules:
     status: exempt
     comment: Les deux capteurs sont le cœur de l'intégration.
   entity-translations:
-    status: todo
-    comment: translation_key défini, mais _attr_name explicite l'emporte sur la traduction.
+    status: done
+    comment: Noms via translation_key + strings.json/translations (plus de _attr_name) ; friendly_name vérifié par test.
   exception-translations:
-    status: todo
-    comment: ConfigEntryNotReady levé sans clé de traduction.
+    status: exempt
+    comment: Aucune exception levée vers l’utilisateur — pas d’action, et le wrapper ConfigEntryNotReady inutile a été retiré.
   icon-translations:
-    status: todo
-    comment: Icône via _attr_icon au lieu d'icons.json.
+    status: done
+    comment: icons.json (mdi:church par translation_key), plus de _attr_icon.
   reconfiguration-flow:
     status: exempt
     comment: Aucun paramètre à reconfigurer.
@@ -169,5 +169,5 @@ rules:
     status: exempt
     comment: Aucun appel HTTP.
   strict-typing:
-    status: todo
-    comment: Annotations partielles, pas de py.typed ni de mypy strict.
+    status: done
+    comment: mypy --strict (mypy.ini) sans erreur sur custom_components/saintdujour, exécuté en CI. Un seul type-ignore documenté (import StaticPathConfig ré-exporté par HA).

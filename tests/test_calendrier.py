@@ -1,6 +1,6 @@
 """Non-régression : le calendrier des saints couvre chaque jour de l'année."""
-from datetime import date, timedelta
 import importlib.util
+from datetime import date, timedelta
 from pathlib import Path
 
 _CONST = Path(__file__).parents[1] / "custom_components" / "saintdujour" / "const.py"
