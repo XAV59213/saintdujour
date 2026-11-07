@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### Ajouté
+- `quality_scale.yaml` : auto-évaluation des 54 règles Quality Scale actuelles (done / todo / exempt justifiés). Aucun niveau officiel revendiqué (intégration custom HACS, manifest inchangé).
+
 ### Corrigé
 - Calendrier : ajout du 25 décembre (« les Noël », calendrier PTT) qui manquait — les capteurs affichaient « Inconnu » ce jour-là (et la veille pour « Saint de demain »). Test de complétude du calendrier (366 jours) ajouté.
 
