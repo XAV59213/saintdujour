@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### Ajouté
+- Badge « GitHub Stars » cliquable (vers les stargazers) à la fin de la ligne des badges du README.
+
 ## 1.4.1 - 2026-11-20
 
 ### Ajouté
