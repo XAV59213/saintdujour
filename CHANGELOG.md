@@ -2,6 +2,8 @@
 
 ## Non publié
 
+## 1.4.1 - 2026-11-20
+
 ### Ajouté
 - Badge cliquable « Discuter sur Forum Domotique » en haut du README.
 
